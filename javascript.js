@@ -1,29 +1,30 @@
-//let output = document.querySelector('.output');
-//output.innerHTML = '';
+//create people array with list of names, including Phil and Lola
+//create array of admitted and refused guests
+//create loop
+//set condition for Lola and Phil
+const people=['Bob','Julie','Terrance','Misty','Andrea','Lola',
+    'Jude','Phil'];
+//const admitted=[];
+//const refused=[];
+let admitted = '';
+let refused = '';
 
-// let i = 10;
+let i = 0;
 
-
-
-// output.appendChild(para);
-
-//const para = document.createElement('p');
-//para.textContent = '';
-let i=10;
-const fullCountdown=[];
-while(i>-1) {
-//    const para = document.createElement('p');
-    if(i===0) {
-        fullCountdown.push('Blast Off!');
-    }
-    else if(i<10){
-        fullCountdown.push(i);
+console.log(people.length);
+for(i=0; i < people.length; i++) {
+    console.log(i);
+    if(people[i] === 'Lola' || people[i] === 'Phil') {
+        refused = refused + people[i] + ', ';
     }
     else{
-        fullCountdown.push('Countdown ' + i);
+        admitted = admitted + people[i] + ', ';
     };
-//    output.appendChild(para);
-    i--;
 };
-document.getElementById("myTest").innerHTML = fullCountdown;
-//[object HTMLParagraphElement]
+let myAdmit = admitted.substring(0, admitted.length-2);
+let myRefuse = refused.substring(0, refused.length-2);
+
+document.getElementById('admitted').innerHTML = 
+    'Guests for Admission: ' + myAdmit;
+document.getElementById('refused').innerHTML = 
+    'Guests for Refusal: ' + myRefuse;
